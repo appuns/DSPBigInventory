@@ -1,0 +1,7 @@
+{
+    "name": "DSPBigInventory",
+    "version_number": "1.0.1",
+    "website_url": "",
+    "description": "This allows you to resize Inventory.インベントリーのサイズを変更できるようになります。",
+    "dependencies": []
+}
