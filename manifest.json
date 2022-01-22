@@ -1,7 +1,7 @@
 {
     "name": "DSPBigInventory",
-    "version_number": "1.0.1",
-    "website_url": "",
-    "description": "This allows you to resize Inventory.インベントリーのサイズを変更できるようになります。",
+    "version_number": "1.0.2",
+    "website_url": "https://github.com/appuns/DSPBigInventory",
+    "description": "This allows you to resize Inventory.This don't affect achievements or milestones. インベントリーのサイズを変更できるようになります。実績やマイルストーンには影響しません。",
     "dependencies": []
 }
