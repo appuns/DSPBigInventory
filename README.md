@@ -25,6 +25,8 @@ If you have any problems or suggestions, please contact DISCORD MSP Modding serv
 不具合、改善案などありましたら、DISCORD「DysonSphereProgram_Jp」サーバー**Appun#8284**までお願いします。<br>
 <br>
 ## Change Log　更新履歴
+### v1.0.4
+- Fixed an issue with a new game. 新規ゲームで出ていた問題を修正しました。
 ### v1.0.3
 - Fixed an issue where the width of the assembler inventory was not changed. 組立機のインベントリの横幅が変更されていなかった問題を修正
 ### v1.0.2

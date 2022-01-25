@@ -25,7 +25,7 @@ using xiaoye97;
 namespace DSPBigInventory
 {
 
-    [BepInPlugin("Appun.DSP.plugin.BigInventory", "DSPBigInventory", "1.0.4")]
+    [BepInPlugin("Appun.DSP.plugin.BigInventory", "DSPBigInventory", "1.0.5")]
     [BepInProcess("DSPGAME.exe")]
 
     [HarmonyPatch]
@@ -51,6 +51,21 @@ namespace DSPBigInventory
         {
             __instance.package.SetSize(colCount.Value * rowCount.Value);
         }
+
+        //新規ゲームを開始したらストレージサイズを修正
+        [HarmonyPostfix, HarmonyPatch(typeof(Player), "SetForNewGame")]
+        public static void Mecha_SetForNewGame_Postfix(Player __instance)
+        {
+            __instance.package.SetSize(colCount.Value * rowCount.Value);
+        }
+
+        //プレーヤーインベントリを開いたとき
+        [HarmonyPostfix, HarmonyPatch(typeof(GameHistoryData), "UnlockTechFunction")]
+        public static void GameHistoryData_UnlockTechFunction_Postfix(UIGame __instance)
+        {
+            UIRoot.instance.uiGame.inventory.colCount = colCount.Value;
+        }
+
 
         //プレーヤーインベントリを開いたとき
         [HarmonyPostfix,HarmonyPatch(typeof(UIGame), "OpenPlayerInventory")]
