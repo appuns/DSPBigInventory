@@ -22,10 +22,14 @@ using Steamworks;
 using rail;
 using xiaoye97;
 
+[module: UnverifiableCode]
+[assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+
+
 namespace DSPBigInventory
 {
 
-    [BepInPlugin("Appun.DSP.plugin.BigInventory", "DSPBigInventory", "1.0.5")]
+    [BepInPlugin("Appun.DSP.plugin.BigInventory", "DSPBigInventory", "1.0.4")]
     [BepInProcess("DSPGAME.exe")]
 
     [HarmonyPatch]
@@ -59,11 +63,18 @@ namespace DSPBigInventory
             __instance.package.SetSize(colCount.Value * rowCount.Value);
         }
 
-        //プレーヤーインベントリを開いたとき
-        [HarmonyPostfix, HarmonyPatch(typeof(GameHistoryData), "UnlockTechFunction")]
-        public static void GameHistoryData_UnlockTechFunction_Postfix(UIGame __instance)
+        //テックが解除されたとき
+        [HarmonyPrefix, HarmonyPatch(typeof(GameHistoryData), "UnlockTechFunction")]
+        public static bool GameHistoryData_UnlockTechFunction_Prefix(int func)
         {
-            UIRoot.instance.uiGame.inventory.colCount = colCount.Value;
+            if(func == 5)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
 

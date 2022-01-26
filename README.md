@@ -9,6 +9,7 @@ If it is too large, it will go off the screen. Please change the UI size.<br>
 steamapps/common/Dyson Sphere Program/config/Appun.DSP.plugin.BigInventory.cfg<br>
 <br>
 インベントリーのサイズを変更できるようになります。<br>
+
 コンフィグファイルで、行数と列数を指定することができます。<br>
 大きすぎると画面に収まりきれなくなります。その場合UIサイズを変更してください。<br>
 steamapps/common/Dyson Sphere Program/config/Appun.DSP.plugin.BigInventory.<br>
